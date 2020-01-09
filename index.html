@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lection-5</title>
+</head>
+<body>
+	<h5>Задание: <p>
+		Привет. Вам нужно оформить ваше прошлое задание в виде функции, которая умеет принимать аргументы, первый - высота треугольника, второй - из каких символов <br>он будет состоять, но нужна проверка, что ввели не больше одного символа<br><br><br>
+
+
+
+И еще) У вас есть функция) <br><br>
+
+
+
+function f (a, b, c) {<br><br>
+
+function sum (a, b) {<br><br>
+
+return a + b;<br><br>
+
+}<br><br>
+
+}<br><br>
+
+
+
+Перепишите её следующим образом:<br>
+
+1. Если аргументы a и b не переданы, они равны по умолчанию 2 и 3 соответсвенно.<br>
+
+2. Если аргумент c передан и он является функцией, то он выполняется вместо вызова функции sum.<br>
+
+3. Функция f должна возвращать результат функции аргумента c, если он есть, либо результат функции sum.<br>
+</p></h5>
+<script>
+	// function triangle (hight,symbol){
+	// 	for( var elem = symbol; elem.length <= hight; elem += symbol ) {
+	// 		console.log(elem);
+	// 	}
+	// }
+	// var hights = prompt('Какая высота треугольника?', '');
+	// var symbols = prompt('Каким символом?', '');
+	// triangle(hights,symbols);
+
+
+
+	function f (a,b,c){
+		if ( a == null || b == null ) {
+			a = 2;
+			b = 3;
+			console.log( 'Go! ' + a + ' '  + b );
+		} else {
+			console.log( 'Go! ' + a + ' '  + b );
+		}
+		if ( c == null ) {
+			sum(a,b);
+		}else {
+						console.log(c)
+				c(a,b);
+		}
+		function sum ( a, b ) {
+			console.log( a + b );
+			return a + b;
+		}
+	}
+	f(2,2, function(a,b) {
+		a*b
+		console.log( a * b );
+		return a * b;
+	});
+
+</script>
+
+</body>
+</html>
