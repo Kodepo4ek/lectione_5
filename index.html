@@ -35,43 +35,46 @@ return a + b;<br><br>
 3. Функция f должна возвращать результат функции аргумента c, если он есть, либо результат функции sum.<br>
 </p></h5>
 <script>
-	// function triangle (hight,symbol){
-	// 	for( var elem = symbol; elem.length <= hight; elem += symbol ) {
-	// 		console.log(elem);
-	// 	}
-	// }
-	// var hights = prompt('Какая высота треугольника?', '');
-	// var symbols = prompt('Каким символом?', '');
-	// triangle(hights,symbols);
+	function triangle (hight,symbol){
+		if ( hight === '' || hight === ' ' ) {
+			alert('Введите значение');
+		} else {
+				var result = '';
+				for( var elem = symbol; elem.length <= hight; elem += symbol ) {
+				result += elem;
+				result += '\n';
+			}
+		}
+		return result;
+	}
+	var hights = prompt('Какая высота треугольника?', '');
+	var symbols = prompt('Каким символом?', '');
+	console.log(triangle(hights,symbols));
 
 
 
-	function f (a,b,c){
-		if ( a == null || b == null ) {
+	function f (a,b,c) {
+		if ( a == undefined || b == undefined ) {
 			a = 2;
 			b = 3;
-			console.log( 'Go! ' + a + ' '  + b );
+			sum(a,b);
 		} else {
-			console.log( 'Go! ' + a + ' '  + b );
+			sum(a,b);
 		}
-		if ( c == null ) {
+		if ( c == undefined ) {
 			sum(a,b);
 		}else {
-						console.log(c)
 				c(a,b);
+				
 		}
 		function sum ( a, b ) {
-			console.log( a + b );
 			return a + b;
 		}
 	}
-	f(2,2, function(a,b) {
-		a*b
-		console.log( a * b );
-		return a * b;
-	});
-
+	console.log(f(10,2, function(a,b) {
+		console.log(a*b);
+	}));
 </script>
 
 </body>
-</html>
+</html> 
